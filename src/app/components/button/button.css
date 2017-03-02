@@ -1,0 +1,27 @@
+.Button__component {
+    margin: 1.5rem 0 0;
+}
+
+.Button {
+    font-family: 'Montserrat';
+    font-size: .9rem;
+    font-weight: 300;
+    padding: .6rem 1.2rem;
+    color: #ffffff;
+    border-radius: .2rem;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.Button__primary {
+    background-color: #2684B7;
+}
+
+.Button__secondary {
+    background-color: #5C6B73;
+}
+
+.Button__small {
+    font-size: .6rem;
+    padding: .2rem .8rem;
+}
