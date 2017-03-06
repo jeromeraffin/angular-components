@@ -1,0 +1,30 @@
+.Article__list {
+    display: flex;
+}
+
+.Article__item {
+    list-style: none;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-radius: 0 0 .4rem .4rem;
+}
+
+.Article__title {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: .6rem;
+}
+
+.Article__text {
+    text-align: center;
+    line-height: 1.8;
+}
+
+.Article__date {
+
+}

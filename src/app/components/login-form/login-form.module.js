@@ -10,13 +10,13 @@ export const loginFormModule = angular
       .state('login-form', {
         url: '/login-form',
         template: `<div class="Component__form">
-            <h1 style="font-family:'Roboto'; text-align: center; margin: 0 0 2rem; text-transform: uppercase; font-size: 1.4rem;">Mon Site</h1>
+            <h1 style="font-family:'Roboto'; text-align: center; margin: 0 0 2rem; text-transform: uppercase; font-size: 1.4rem;">My Website</h1>
             <input-component class="Input__component" label="Email" type="text"></input-component>
             <input-component class="Input__component" label="Password" type="password"></input-component>
 
             <div class="Button__container">
-                <button-component class="Button__component" label="Se connecter" color="primary" link="https://twitter.com/"></button-component>
-                <button-component class="Button__component" label="S'inscrire" color="secondary" link="https://twitter.com/"></button-component>
+                <button-component class="Button__component" label="Se connecter" color="primary" link="#"></button-component>
+                <button-component class="Button__component" label="S'inscrire" color="secondary" link="#"></button-component>
             </div>
         </div>`
       });
