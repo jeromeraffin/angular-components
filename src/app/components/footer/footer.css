@@ -1,0 +1,60 @@
+#Footer__partage {
+	display:flex;
+	justify-content: center;
+	flex-direction:row;
+	margin-top:20px;
+}
+
+#facebook {margin-left:5px;}
+#twitter {margin-right:5px;}
+
+.Footer__item {
+	display: flex;
+	flex-direction:column; 
+	font-family: 'Roboto';
+	font-size: 0.90rem;
+	background-color: white;
+	color:rgb(131, 135, 142);
+}
+
+#Footer__contact {
+	margin-top:15px;
+	margin-left: 30px;
+	margin-right:30px;
+}
+#Footer__copyright {
+	margin-top:15px;
+	margin-left: 10px;
+	text-align:center;
+}
+#Footer__lienback {
+	text-decoration: none;
+	font-size: 0.60rem;
+	margin-top: 40px;
+	margin-bottom: 20px;
+	margin-left: 80%;
+}
+
+.lien {
+	text-decoration: none;}
+
+	/* -----
+SVG Icons - svgicons.sparkk.fr
+----- */
+
+.svg-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+	fill: #4691f6;
+}
+
+.svg-icon circle {
+	stroke: #4691f6;
+	stroke-width: 1;
+}
+
