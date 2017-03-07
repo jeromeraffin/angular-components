@@ -1,3 +1,8 @@
+.ng-scope {
+	width: 100%;
+	justify-content: center;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -16,6 +21,8 @@ html {
 
 body {
     font-family: 'Roboto';
+    font-size: 16px;
+    line-height: 1.5;
     height: 100%;
     margin: 0;
     background: #eaeaea;
@@ -24,6 +31,8 @@ body {
     align-items: center;
     display: -webkit-flex;
     display: flex;
+    text-rendering: optimizeLegibility!important; 
+    -webkit-font-smoothing: antialiased!important;
 }
 
 .App {
@@ -31,7 +40,6 @@ body {
     width: 100%;
     display: flex;
     flex-direction: row;
-    overflow: hidden;
 }
 
 .Sidebar {
@@ -42,7 +50,7 @@ body {
 
 .Main {
     display: flex;
-    flex: 4;
+    width: 100%;
     justify-content: center;
     height: 100%;
 }
@@ -84,5 +92,11 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin: 1rem 0 0;
+}
+
+.Component__articles {
+		display: flex;
+    flex-direction: column;
     margin: 1rem 0 0;
 }
