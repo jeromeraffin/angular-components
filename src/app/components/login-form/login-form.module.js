@@ -15,7 +15,7 @@ export const loginFormModule = angular
             <input-component class="Input__component" label="Password" type="password"></input-component>
 
             <div class="Button__container">
-                <button-component class="Button__component" label="Se connecter" color="primary" link="#"></button-component>
+                <button-component class="Button__component" label="Se connecter" color="primary" link="#" ng-click="$ctrl.addCookie()"></button-component>
                 <button-component class="Button__component" label="S'inscrire" color="secondary" link="#"></button-component>
             </div>
         </div>`

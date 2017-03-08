@@ -9,8 +9,12 @@ export const ButtonComponent = {
     },
     template,
     controller: class ButtonComponent {
-        constructor() {
 
+        constructor() {
         }
+        addCookie() {
+            console.log('Hey');
+        }
+
     }
 };
