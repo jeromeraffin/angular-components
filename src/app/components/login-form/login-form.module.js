@@ -5,7 +5,7 @@ export const loginFormModule = angular
   .module('loginFormModule', [
       uiRouter
   ])
-  .config(($stateProvider, $urlRouterProvider) => {
+  .config(($stateProvider, $urlRouterProvider, $locationProvider) => {
     $stateProvider
       .state('login-form', {
         url: '/login-form',
@@ -21,5 +21,6 @@ export const loginFormModule = angular
         </div>`
       });
     $urlRouterProvider.otherwise('/');
+    $locationProvider.html5Mode(true);
   })
   .name;

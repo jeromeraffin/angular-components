@@ -1,0 +1,52 @@
+<h3>Articles</h3>
+	<table>
+		<tr>
+			<th>
+				Title
+			</th>
+			<th>
+				Actions
+			</th>
+		</tr>
+		<tr ng-repeat="article in $ctrl.articles">
+			<td>
+				{{ article.title }}
+			</td>
+			<td>
+				<button type="submit" ng-click="$ctrl.deleteArticle(article._id)">Delete</button>
+			</td>
+		</tr>
+	</table>
+	
+
+<h1>New Article</h1>
+<form>
+	<p>
+	title
+	<input type="text" ng-model="$ctrl.formData.title">
+	</p>
+	<p>
+	content
+	<textarea width=50 height=30 ng-model="$ctrl.formData.content"></textarea>
+	</p>
+	<p>
+	excerpt
+	<textarea width=50 height=30 ng-model="$ctrl.formData.excerpt"></textarea>
+	</p>
+	<p>
+	date
+	<input type="text" ng-model="$ctrl.formData.date">
+	</p>
+	<p>
+	image
+	<input type="text" ng-model="$ctrl.formData.img">
+	</p>
+	<p>
+	image alt
+	<input type="text" ng-model="$ctrl.formData.imgAlt">
+	</p>
+	<p>
+	<button type="submit" ng-click="$ctrl.addArticle()">Add</button>
+	</p>
+</form>
+

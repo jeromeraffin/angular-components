@@ -8,12 +8,13 @@ export const CardModule = angular
       uiRouter
   ])
   .component('cardComponent', CardComponent)
-  .config(($stateProvider, $urlRouterProvider) => {
+  .config(($stateProvider, $urlRouterProvider, $locationProvider) => {
     $stateProvider
       .state('card', {
         url: '/card',
         template: '<card-component></card-component>'
       });
     $urlRouterProvider.otherwise('/');
+    $locationProvider.html5Mode(true);
   })
   .name;

@@ -10,12 +10,13 @@ export const ArticlesModule = angular
 			uiRouter
 		])	
 	.component('articlesComponent', ArticlesComponent)
-	.config(($stateProvider, $urlRouterProvider) => {
+	.config(($stateProvider, $urlRouterProvider, $locationProvider) => {
 		$stateProvider
 			.state('articles', {
 				url: '/articles',
 				template: '<articles-component class="Component__articles"></articles-component>'
 			});
 		$urlRouterProvider.otherwise('/');
+		$locationProvider.html5Mode(true);
 	})
 	.name;
