@@ -52,23 +52,6 @@ app.use(bodyParser.json({'type':'application/vnd.api+json'}));
 // });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Allow access to node_modules from /scripts path in html
 //app.use('/scripts', express.static(path.join(__dirname, 'node_modules')));
 
@@ -79,10 +62,28 @@ app.use(methodOverride());
 require('./app/routes.js')(app);
 //routes(app);
 
-app.all('/*', function(req, res) {
-    res.sendFile(path.join(__dirname, '/public/index.html'));
-    console.log(path.join(__dirname, '/public/index.html'));
+// app.all('/*', function(req, res) {
+//     res.sendFile(path.join(__dirname, '/public/index.html'));
+//     console.log(path.join(__dirname, '/public/index.html'));
+// });
+
+ 
+// serve angular front end files from root path
+// app.use('/', express.static('public', { redirect: false }));
+ 
+// // rewrite virtual urls to angular app to enable refreshing of internal pages
+// app.get('*', function (req, res, next) {
+//     res.sendFile(path.resolve('public/index.html'));
+//     console.log(path.resolve('public/index.html'));
+// });
+
+// Make clean angular url works
+app.use(function(req, res) {
+		//console.log(path.join(__dirname, '/public/index.html'));
+		res.sendFile(path.join(__dirname, '/public/index.html'));
+    //res.sendFile(__dirname + '/public/index.html');
 });
+ 
 
 // Startup our app
 app.listen(PORT, function() {

@@ -6,8 +6,8 @@ export const BackArticlesComponent = {
 	template,
 	controller: class BackArticlesComponent {
 		constructor($http) {
-
-			//this.formData = {};
+			this.articleId = '';
+			this.formData = {};
 
 			// When landing on the page display all articles
 			$http({
@@ -19,21 +19,49 @@ export const BackArticlesComponent = {
 				console.log(err);
 			});
 
-			// add an article
-			// When submitting the add form, send the text to the node API
-			this.addArticle = () => {
+			// Get the article to update and populate the form
+			this.updateArticle = (id) => {
 				$http({
-					method: 'POST',
-					data: this.formData,
-					url: '/api/articles/save'
+					method: 'GET',
+					url: '/api/articles/fetch/' + id
 				}).then((res) => {
-					this.articles = res.data;
+					this.formData = res.data;
 				}).catch((err) => {
 					console.log(err);
-				});
+				});		
+				this.articleId = id;		
+			}
+
+			// Create or update an article
+			// When submitting the form, send the text to the node API
+			this.action = () => {
+				if(this.articleId === '') {
+					$http({
+						method: 'POST',
+						data: this.formData,
+						url: '/api/articles/save'
+					}).then((res) => {
+						this.articles = res.data;
+					}).catch((err) => {
+						console.log(err);
+					});
+				}
+				else {
+					$http({
+						method: 'PUT',
+						data: this.formData,
+						url: '/api/articles/update/' + this.articleId
+					}).then((res) => {
+						this.articles = res.data;
+					}).catch((err) => {
+						console.log(err);
+					});
+				}
+				this.articleId = '';
+				this.formData = {};
 			}
 		
-			//delete an article
+			// Delete an article
 			this.deleteArticle = (id) => {
 				$http({
 					method: 'DELETE',

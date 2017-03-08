@@ -48,6 +48,45 @@ module.exports = (app) => {
 		});
 	});
 
+	// Update an Article and send back all articles
+	app.put('/api/articles/update/:article_id', (req, res) => {
+		Article.update({
+			_id: req.params.article_id
+		}, {
+			title: req.body.title,
+			content: req.body.content,
+			excerpt: req.body.excerpt,
+			date: req.body.date,
+			img: req.body.img,
+			imgAlt: req.body.imgAlt
+		}, (err, article) => {
+			if(err) {
+				res.send(err);
+			}
+			// Get and return all the articles after the delete operation to make sure that the article got deleted
+			Article.find((err, articles) => {
+				if(err) {
+					res.send(err);
+				}
+				res.json(articles);
+			});
+		});
+	});
+
+
+	app.get('/api/articles/fetch/:article_id', (req, res) => {
+		Article.findOne({
+			_id: req.params.article_id
+		}, (err, article) => {
+			if(err) {
+				res.send(err);
+			}
+			else {
+				res.json(article);
+			}
+		});
+	});
+
 	// Delete an Article and send back all remaining articles
 	app.delete('/api/articles/delete/:article_id', (req, res) => {
 		Article.remove({
