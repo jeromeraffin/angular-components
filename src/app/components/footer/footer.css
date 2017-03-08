@@ -17,6 +17,7 @@
 	color:rgb(131, 135, 142);
 }
 
+
 #Footer__contact {
 	margin-top:15px;
 	margin-left: 30px;
@@ -26,14 +27,9 @@
 	margin-top:15px;
 	margin-left: 10px;
 	text-align:center;
-}
-#Footer__lienback {
-	text-decoration: none;
-	font-size: 0.60rem;
-	margin-top: 40px;
 	margin-bottom: 20px;
-	margin-left: 80%;
 }
+
 
 .lien {
 	text-decoration: none;}
