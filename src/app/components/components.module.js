@@ -16,5 +16,3 @@ export const ComponentsModule = angular
 	ButtonModule, InputModule, loginFormModule, CardModule, ArticlesModule, IndexModule, BackArticlesModule, BackModule, FooterModule, HeaderModule
 	])
 .name;
-
->>>>>>> master
