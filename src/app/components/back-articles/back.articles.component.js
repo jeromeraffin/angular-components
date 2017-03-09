@@ -1,77 +1,47 @@
 'use strict'
 
-import template from './back.articles.html'
+import template from './back.articles.html';
 
 export const BackArticlesComponent = {
 	template,
 	controller: class BackArticlesComponent {
-		constructor($http) {
+		constructor(BackArticlesService) {
+      this.BackArticlesService = BackArticlesService;
+
 			this.articleId = '';
 			this.formData = {};
 
-			// When landing on the page display all articles
-			$http({
-				method: 'GET',
-				url: '/api/articles/fetchAll'
-			}).then((res) => {
-				this.articles = res.data;
-			}).catch((err) => {
-				console.log(err);
+			this.BackArticlesService.getArticles().then((res) => {
+			    this.articles = res;
 			});
+		}
 
-			// Get the article to update and populate the form
-			this.updateArticle = (id) => {
-				$http({
-					method: 'GET',
-					url: '/api/articles/fetch/' + id
-				}).then((res) => {
-					this.formData = res.data;
-				}).catch((err) => {
-					console.log(err);
-				});		
-				this.articleId = id;		
+		selectArticle(id) {
+			this.BackArticlesService.selectArticle(id).then((res) => {
+					this.formData = res;
+			});
+			this.articleId = id;
+		}
+
+		action() {
+			if(this.articleId === '') {
+				this.BackArticlesService.createArticle(this.formData).then((res) => {
+			  	  this.articles = res;
+				});
 			}
-
-			// Create or update an article
-			// When submitting the form, send the text to the node API
-			this.action = () => {
-				if(this.articleId === '') {
-					$http({
-						method: 'POST',
-						data: this.formData,
-						url: '/api/articles/save'
-					}).then((res) => {
-						this.articles = res.data;
-					}).catch((err) => {
-						console.log(err);
-					});
-				}
-				else {
-					$http({
-						method: 'PUT',
-						data: this.formData,
-						url: '/api/articles/update/' + this.articleId
-					}).then((res) => {
-						this.articles = res.data;
-					}).catch((err) => {
-						console.log(err);
-					});
-				}
+			else {
+				this.BackArticlesService.updateArticle(this.articleId, this.formData).then((res) => {
+			  	  this.articles = res;
+				});
 				this.articleId = '';
 				this.formData = {};
 			}
-		
-			// Delete an article
-			this.deleteArticle = (id) => {
-				$http({
-					method: 'DELETE',
-					url: '/api/articles/delete/' + id
-				}).then((res) => {
-					this.articles = res.data;
-				}).catch((err) => {
-					console.log(err);
-				});
-			}
+		}
+
+		deleteArticle(id) {
+			this.BackArticlesService.deleteArticle(id).then((res) => {
+					this.articles = res;
+			});	
 		}
 	}
 };

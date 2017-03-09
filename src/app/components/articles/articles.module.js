@@ -2,13 +2,15 @@
 
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
-import { ArticlesComponent } from './articles.component'
+import { ArticlesComponent } from './articles.component';
+import { ArticlesService } from './articles.service';
 import './articles.css';
 
 export const ArticlesModule = angular
 	.module('articlesComponent', [
 			uiRouter
 		])	
+	.service('ArticlesService', ArticlesService)
 	.component('articlesComponent', ArticlesComponent)
 	.config(($stateProvider, $urlRouterProvider, $locationProvider) => {
 		$stateProvider

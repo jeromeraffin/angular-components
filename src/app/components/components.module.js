@@ -6,9 +6,10 @@ import { CardModule } from './card/card.module';
 import { IndexModule } from './view/index.module';
 import { ArticlesModule } from './articles/articles.module';
 import { BackArticlesModule } from './back-articles/back.articles.module';
+import { BackModule } from './back/back.module';
 
 export const ComponentsModule = angular
   .module('app.components', [
-    ButtonModule, InputModule, loginFormModule, CardModule, ArticlesModule, IndexModule, BackArticlesModule
+    ButtonModule, InputModule, loginFormModule, CardModule, ArticlesModule, IndexModule, BackArticlesModule, BackModule
   ])
   .name;
