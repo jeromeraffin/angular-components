@@ -8,12 +8,13 @@ export const ButtonModule = angular
       uiRouter
   ])
   .component('buttonComponent', ButtonComponent)
-  .config(($stateProvider, $urlRouterProvider) => {
+  .config(($stateProvider, $urlRouterProvider, $locationProvider) => {
     $stateProvider
       .state('button', {
         url: '/button',
         template: '<br><button-component class="Button__component" label="Example" color="primary"></button-component>'
       });
     $urlRouterProvider.otherwise('/');
+    $locationProvider.html5Mode(true);
   })
   .name;

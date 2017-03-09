@@ -3,9 +3,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: ['webpack-dev-server/client?http://127.0.0.1:8080/',
-        'webpack/hot/only-dev-server',
-        './src/app/app.module.js'],
+  entry: './src/app/app.module.js',
   output: {
     filename: 'bundle.js',
     path: path.join(__dirname, 'public'),
@@ -36,17 +34,9 @@ module.exports = {
       // Loaders for other file types can go here
     ],
   },
-  plugins: [new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoEmitOnErrorsPlugin(),
-        new HtmlWebpackPlugin( {
+  plugins: [new HtmlWebpackPlugin( {
       template: 'public/index.html',
       hash: true
   })
   ],
-  devServer: {
-        hot: true,
-        proxy: {
-            '*': 'http://localhost:3000'
-        }
-    }
 };

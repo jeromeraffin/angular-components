@@ -1,0 +1,43 @@
+.Back-Header {
+	display: flex;
+	width: 100%;
+	height: 6rem;
+	color: #EEE;
+}
+
+.Back-Header__Language {
+	display: flex;
+	justify-content: center;
+  flex-direction: column;
+	background-color: #12233D;
+	width: 20rem;
+	text-align: center;
+	font-size: 1.4rem;
+}
+
+.Back-Header__Title {
+	display: flex;
+	flex-grow: 1;	
+	justify-content: center;
+  flex-direction: column;
+	background-color: #385EC7;
+	padding: 0 0 0 2rem;
+}
+
+.Back {
+	display: flex;
+	width: 100%;
+	height: auto;
+	min-height: 30rem;
+}
+
+.Back__Sidebar {
+	background-color: #1A2E56;
+	width: 20rem;
+}
+
+.Back__Content {
+	background-color: #FFF;
+	flex-grow: 1;		
+	padding: 2rem;
+}
