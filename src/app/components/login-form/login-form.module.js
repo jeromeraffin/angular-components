@@ -5,7 +5,7 @@ export const loginFormModule = angular
   .module('loginFormModule', [
       uiRouter
   ])
-  .config(($stateProvider, $urlRouterProvider) => {
+  .config(($stateProvider, $urlRouterProvider, $locationProvider) => {
     $stateProvider
       .state('login-form', {
         url: '/login-form',
@@ -15,11 +15,12 @@ export const loginFormModule = angular
             <input-component class="Input__component" label="Password" type="password"></input-component>
 
             <div class="Button__container">
-                <button-component class="Button__component" label="Se connecter" color="primary" link="#"></button-component>
+                <button-component class="Button__component" label="Se connecter" color="primary" link="#" ng-click="$ctrl.addCookie()"></button-component>
                 <button-component class="Button__component" label="S'inscrire" color="secondary" link="#"></button-component>
             </div>
         </div>`
       });
     $urlRouterProvider.otherwise('/');
+    $locationProvider.html5Mode(true);
   })
   .name;

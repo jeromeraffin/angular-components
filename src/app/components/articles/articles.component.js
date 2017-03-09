@@ -1,13 +1,21 @@
+
+'use strict'
+
 import template from './articles.html';
 
 export const ArticlesComponent = {
-	bindings: {
-	},
 	template,
 	controller: class ArticlesComponent {
-		constructor() {
-			this.articlesTitle = 'Hello';
+		constructor(ArticlesService) {
+			this.ArticlesService = ArticlesService;
 
+			this.ArticlesService.getArticles().then((res) => {
+				this.articles = res;
+			});
+
+			this.articlesTitle = "Carnet de voyage";			
 		}
 	}
 };
+
+

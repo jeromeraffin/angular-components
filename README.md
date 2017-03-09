@@ -1,6 +1,5 @@
 # Angular Reusable Components
 
-
 ### Liens utiles
 
 #### Style guide
