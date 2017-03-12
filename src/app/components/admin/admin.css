@@ -1,11 +1,11 @@
-.Back-Header {
+.Admin-Header {
 	display: flex;
 	width: 100%;
 	height: 6rem;
 	color: #EEE;
 }
 
-.Back-Header__Language {
+.Admin-Header__Language {
 	display: flex;
 	justify-content: center;
   flex-direction: column;
@@ -15,29 +15,33 @@
 	font-size: 1.4rem;
 }
 
-.Back-Header__Title {
+.Admin-Header__Title {
 	display: flex;
-	flex-grow: 1;	
+	flex-grow: 1;
 	justify-content: center;
   flex-direction: column;
 	background-color: #385EC7;
 	padding: 0 0 0 2rem;
 }
 
-.Back {
+.Admin {
 	display: flex;
 	width: 100%;
 	height: auto;
 	min-height: 30rem;
 }
 
-.Back__Sidebar {
+.Admin__Sidebar {
 	background-color: #1A2E56;
 	width: 20rem;
 }
 
-.Back__Content {
+.Admin__Sidebar a {
+  color: #FFF;
+}
+
+.Admin__Content {
 	background-color: #FFF;
-	flex-grow: 1;		
+	flex-grow: 1;
 	padding: 2rem;
 }

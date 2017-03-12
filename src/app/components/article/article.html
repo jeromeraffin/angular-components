@@ -1,42 +1,17 @@
-<!-- 
-<article class="Fullarticle__item">
-  <figure class="Fullarticle__img center-oversized-img">
-    <img alt="{{ $ctrl.article.imgAlt }}" src="{{ $ctrl.article.img }}"/>
-  </figure>
-  <div class="Fullarticle__container">
-   <date class="Fullarticle__date">
-     {{ $ctrl.article.date }}
-   </date>
-   <h2 class="Fullarticle__title">
-     {{ $ctrl.article.title }}
-   </h2>
-   <p class="Fullarticle__content">
-     {{ $ctrl.article.content }}
-   </p>
- </div>
-</article> -->
 <section class="Section Section__fullArticle">
   <article class="fullArticle__content">
     <figure class="fullArticle__img">
-      <img alt=""src=""/>
+      <img alt="{{ $ctrl.article.imgAlt }}" src="{{ $ctrl.article.img }}" />
     </figure>
     <header class="fullArticle__header">
-      <date class="fullArticle__date">09 Apr 2017</date>
-      <h2 class="fullArticle__title">Trip To Iqaluit In Nunavut A Canadian Artic City</h2>
+      <date class="fullArticle__date">{{ $ctrl.article.date }}</date>
+      <h2 class="fullArticle__title">{{ $ctrl.article.title }}</h2>
     </header>
     <div class="fullArticle__desc">
-      <p>
-        Etiam et ex in ipsum aliquet placerat ultrices in justo. In ut feugiat nulla. Ut porta, nisi ac vestibulum posuere, elit arcu tempus orci, a dignissim lacus quam ut dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus posuere molestie turpis, nec porta ligula rhoncus nec. Nulla facilisi. Sed ullamcorper arcu sed quam accumsan, in placerat orci rhoncus. Etiam odio libero, dapibus sit amet enim in, accumsan dignissim lectus. Cras hendrerit leo at dui consectetur sodales. Duis tempus ornare convallis. Nulla porttitor interdum arcu, nec hendrerit felis. Morbi in rutrum nisi, nec sollicitudin mi. Fusce nisl quam, gravida at neque sit amet, pulvinar pellentesque libero. Pellentesque non molestie erat.</p>
-        <h3 class="fullArticle__subtitle">Etiam et ex in ipsum aliquet placerat ultrices in justo</h3>
-        <p>
-          Etiam et ex in ipsum aliquet placerat ultrices in justo. In ut feugiat nulla. Ut porta, nisi ac vestibulum posuere, elit arcu tempus orci, a dignissim lacus quam ut dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus posuere molestie turpis, nec porta ligula rhoncus nec. Nulla facilisi. Sed ullamcorper arcu sed quam accumsan, in placerat orci rhoncus. Etiam odio libero, dapibus sit amet enim in, accumsan dignissim lectus. Cras hendrerit leo at dui consectetur sodales. Duis tempus ornare convallis. Nulla porttitor interdum arcu, nec hendrerit felis. Morbi in rutrum nisi, nec sollicitudin mi. Fusce nisl quam, gravida at neque sit amet, pulvinar pellentesque libero. Pellentesque non molestie erat.<p>
-          <h3 class="fullArticle__subtitle">Etiam et ex in ipsum aliquet placerat ultrices in justo</h3>
-          <p>
-            Etiam et ex in ipsum aliquet placerat ultrices in justo. In ut feugiat nulla. Ut porta, nisi ac vestibulum posuere, elit arcu tempus orci, a dignissim lacus quam ut dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus posuere molestie turpis, nec porta ligula rhoncus nec. Nulla facilisi. Sed ullamcorper arcu sed quam accumsan, in placerat orci rhoncus. Etiam odio libero, dapibus sit amet enim in, accumsan dignissim lectus. Cras hendrerit leo at dui consectetur sodales. Duis tempus ornare convallis. Nulla porttitor interdum arcu, nec hendrerit felis. Morbi in rutrum nisi, nec sollicitudin mi. Fusce nisl quam, gravida at neque sit amet, pulvinar pellentesque libero. Pellentesque non molestie erat.
-          </p>
-        </div>
-      </article>
-      <footer>
-        <div class="fullArticle__bordure"></div>
-      </footer>
-    </section>
+      {{ $ctrl.article.content }}
+    </div>
+  </article>
+  <footer>
+    <div class="fullArticle__bordure"></div>
+  </footer>
+</section>

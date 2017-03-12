@@ -5,14 +5,13 @@
 export class ArticleService {
 	constructor($http) {
 		this.$http = $http;
-		this.getArticle();
 	}
 
-	// Return all articles
-	getArticle(id) {	
+	// Return one article
+	getArticle(slug) {
 		return this.$http({
 			method: 'GET',
-			url: '/api/articles/fetch/'+id
+			url: '/api/articles/fetchSlug/' + slug
 		}).then((res) => {
 			return res.data;
 		})

@@ -6,7 +6,7 @@
 // express server middleware for node
 let express = require('express');
 // Create the application with express
-let app = express(); 
+let app = express();
 // mongoose middleware for mongodb
 let mongoose = require('mongoose');
 // log requests to the console

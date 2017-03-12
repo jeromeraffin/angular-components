@@ -2,9 +2,9 @@
   {{ $ctrl.articlesTitle }}
 </h1>
 <ul class="Article__list">
-  
+
     <li class="Article__item" ng-repeat="article in $ctrl.articles">
-      <figure class="Article__img center-oversized-img">
+      <figure class="Article__img" >
         <img alt="{{ article.imgAlt }}" src="{{ article.img }}"/>
       </figure>
       <div class="Article__container">
@@ -12,7 +12,7 @@
           {{ article.date }}
         </date>
         <h2 class="Article__title">
-        	<a ui-sref="article({id: article._id})" >
+        	<a ui-sref="article({slug: article.slug})" >
           	{{ article.title }}
           </a>
         </h2>
@@ -21,5 +21,5 @@
         </p>
       </div>
     </li>
-  
+
 </ul>

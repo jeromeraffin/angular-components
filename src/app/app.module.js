@@ -10,4 +10,8 @@ export const AppModule = angular
     uiRouter
   ])
   .component('app', AppComponent)
+  // Disable debug infos (ng-scope, etc...)
+  .config(['$compileProvider', function ($compileProvider) {
+        $compileProvider.debugInfoEnabled(false);
+    }])
   .name;

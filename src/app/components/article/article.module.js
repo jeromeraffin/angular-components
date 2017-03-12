@@ -10,13 +10,13 @@ import './article.css';
 export const ArticleModule = angular
 .module('articleComponent', [
 	uiRouter
-	])	
+	])
 .service('ArticleService', ArticleService)
 .component('articleComponent', ArticleComponent)
 .config(($stateProvider, $urlRouterProvider, $locationProvider) => {
 	$stateProvider
 	.state('article', {
-		url: '/article/:articleId',
+		url: '/article/:slug',
 		template: '<article-component class="Component__article"></article-component>'
 	});
 	$urlRouterProvider.otherwise('/');

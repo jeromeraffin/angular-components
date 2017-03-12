@@ -7,8 +7,8 @@ import { HeaderModule } from './header/header.module';
 import { FooterModule } from './footer/footer.module';
 import { IndexModule } from './view/index.module';
 import { ArticlesModule } from './articles/articles.module';
-import { BackArticlesModule } from './back-articles/back.articles.module';
-import { BackModule } from './back/back.module';
+import { AdminArticlesModule } from './admin-articles/admin.articles.module';
+import { AdminModule } from './admin/admin.module';
 import { ArticleModule } from './article/article.module';
 
 export const ComponentsModule = angular
@@ -19,8 +19,8 @@ export const ComponentsModule = angular
 		CardModule,
 		ArticlesModule,
 		IndexModule,
-		BackArticlesModule,
-		BackModule,
+		AdminArticlesModule,
+		AdminModule,
 		FooterModule,
 		HeaderModule,
     ArticleModule

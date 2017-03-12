@@ -1,14 +1,14 @@
-// app/components/back-articles/back.articles.service.js
+// app/components/admin-articles/admin.articles.service.js
 
 'use strict'
 
-export class BackArticlesService { 
+export class AdminArticlesService {
 	constructor($http) {
 		this.$http = $http;
 	}
 
 	// Return all articles
-	getArticles() {	
+	getArticles() {
 		return this.$http({
 			method: 'GET',
 			url: '/api/articles/fetchAll'
@@ -24,14 +24,14 @@ export class BackArticlesService {
 	selectArticle(id) {
 		return this.$http({
 			method: 'GET',
-			url: '/api/articles/fetch/' + id
+			url: '/api/articles/fetchId/' + id
 		}).then((res) => {
 			return res.data;
 		}).catch((err) => {
 			console.log(err);
-		});		
+		});
 	}
-	
+
 	// Create an article
 	// Send the text to the node API
 	createArticle(formData) {
@@ -48,7 +48,7 @@ export class BackArticlesService {
 
 	// Update an article
 	// Send the text to the node API
-	updateArticle(id, formData) {						
+	updateArticle(id, formData) {
 		return this.$http({
 			method: 'PUT',
 			data: formData,
@@ -58,8 +58,8 @@ export class BackArticlesService {
 		}).catch((err) => {
 			console.log(err);
 		});
-	}	
-		
+	}
+
 	// Delete an article
 	deleteArticle(id) {
 		return this.$http({
