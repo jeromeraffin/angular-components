@@ -10,8 +10,4 @@ export const AppModule = angular
     uiRouter
   ])
   .component('app', AppComponent)
-  // .config(($locationProvider, $urlRouterProvider) => {
-  
-  //   $locationProvider.html5Mode(true);
-  // })
   .name;

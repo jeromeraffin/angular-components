@@ -1,12 +1,47 @@
-- make modules
+===================
+BASE
+===================
+- mean.js
+- pas de tutoiement ?
+- 3 ng-app
+	- front
+	- auth
+	- admin
+- server or client side rendering ?
+
+===================
+CODE
+===================
+- display right "sub" component according to the url / state
+- make server modules (see mean.js)
 	- route api
 	- db
-- inject $http (where ?)
-- make services
+- use ng-annotate
+- use ng-translate and i18n-node
+	- fichier json
+- use passport in mean.js for auth
+
+===================
+DB
+===================
+- use mongoose-friendly-id for nicer id
+
+===================
+FRONT
+===================
+- display by date
+- pagination
 	- articles
-- this.$http = $http in constructor ?
-- ng-annotate ?
-- limit in ?
-		then((res) => {
-			return res.data;
-		}
+- categories
+- galleries
+
+===================
+BACK
+===================
+- setup
+- preview article
+- pagination
+	- back articles
+- limit articles returned should be editable
+- categories
+- galleries

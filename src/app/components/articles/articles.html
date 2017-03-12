@@ -1,23 +1,25 @@
-
 <h1 class="blog-title">
   {{ $ctrl.articlesTitle }}
 </h1>
 <ul class="Article__list">
-  <li class="Article__item" ng-repeat="article in $ctrl.articles">
-    <figure class="Article__img center-oversized-img">
-      <img alt="{{ article.imgAlt }}" src="{{ article.img }}"/>
-    </figure>
-    <div class="Article__container">
-    	<date class="Article__date">
-        {{ article.date }}
-      </date>
-      <h2 class="Article__title">
-       {{ article.title }}
-     </h2>
-     <p class="Article__excerpt">
-       {{ article.excerpt }}
-     </p>
-   </div>
- </li>
+  
+    <li class="Article__item" ng-repeat="article in $ctrl.articles">
+      <figure class="Article__img center-oversized-img">
+        <img alt="{{ article.imgAlt }}" src="{{ article.img }}"/>
+      </figure>
+      <div class="Article__container">
+        <date class="Article__date">
+          {{ article.date }}
+        </date>
+        <h2 class="Article__title">
+        	<a ui-sref="article({id: article._id})" >
+          	{{ article.title }}
+          </a>
+        </h2>
+        <p class="Article__excerpt">
+          {{ article.excerpt }}
+        </p>
+      </div>
+    </li>
+  
 </ul>
-

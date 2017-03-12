@@ -20,7 +20,7 @@ module.exports = (app) => {
 			}
 			// Return all articles in JSON format 
 			res.json(articles);
-		});
+		}).limit(20);
 	});
 
 	// Create article and send back all articles after creation
@@ -73,7 +73,7 @@ module.exports = (app) => {
 		});
 	});
 
-
+	// Get one article
 	app.get('/api/articles/fetch/:article_id', (req, res) => {
 		Article.findOne({
 			_id: req.params.article_id
@@ -104,12 +104,4 @@ module.exports = (app) => {
 			});
 		});
 	});
-
-	// app.get('/*', function(req, res) {
-	//   var url = path.resolve(__dirname + '/../public/index.html');
-	//   res.sendFile(url, null, function(err) {
-	//     if (err) res.status(500).send(err);
-	//     else res.status(200).end();
-	//   });
-	// });
 };
