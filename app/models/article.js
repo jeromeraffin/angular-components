@@ -9,12 +9,17 @@ let slug = require('mongoose-slug-generator');
 mongoose.plugin(slug);
 
 module.exports = mongoose.model('Article', {
+	lang: String,
+	timestamps: Boolean,
   title: String,
   content: String,
   date: String,
   excerpt: String,
   img: String,
-  imgAlt: String,
+  categories: Array,
+  visible: Boolean,
+  social_network: Boolean,
+  comments: Boolean,
   slug: {
     type: String,
     slug: "title",

@@ -18,10 +18,14 @@ CODE
 	- fichier json
 - use passport for auth ?
 - update slug when update article ?
+- scss
+- bindings
 
 ===================
 DB
 ===================
+- articles
+	- state
 - categories
 - langues
 - galleries
@@ -41,6 +45,8 @@ ADMIN
 - login
 - setup
   - config
+- articles
+	- textAngular
 - preview article
 - pagination
 	- articles
