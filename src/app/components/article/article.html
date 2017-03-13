@@ -7,8 +7,7 @@
       <date class="fullArticle__date">{{ $ctrl.article.date }}</date>
       <h2 class="fullArticle__title">{{ $ctrl.article.title }}</h2>
     </header>
-    <div class="fullArticle__desc">
-      {{ $ctrl.article.content }}
+    <div ng-bind-html="$ctrl.article.content" class="fullArticle__desc">
     </div>
   </article>
   <footer>

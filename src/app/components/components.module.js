@@ -10,6 +10,7 @@ import { ArticlesModule } from './articles/articles.module';
 import { AdminArticlesModule } from './admin-articles/admin.articles.module';
 import { AdminModule } from './admin/admin.module';
 import { ArticleModule } from './article/article.module';
+import { DevAddArticlesModule } from './dev-add-articles/dev.add.articles.module';
 
 export const ComponentsModule = angular
 .module('app.components', [
@@ -23,6 +24,7 @@ export const ComponentsModule = angular
 		AdminModule,
 		FooterModule,
 		HeaderModule,
-    ArticleModule
+    ArticleModule,
+    DevAddArticlesModule
 	])
 .name;

@@ -1,7 +1,6 @@
 ===================
 BASE
 ===================
-- pas de tutoiement ?
 - 3 ng-app ?
 	- front
 	- auth
@@ -11,7 +10,6 @@ BASE
 ===================
 CODE
 ===================
-- display right "sub" components according to the url / state
 - make server modules
 	- route api
 	- db
@@ -24,6 +22,9 @@ CODE
 ===================
 DB
 ===================
+- categories
+- langues
+- galleries
 
 ===================
 FRONT
@@ -43,6 +44,5 @@ ADMIN
 - preview article
 - pagination
 	- articles
-- limit articles returned should be editable
 - categories
 - galleries

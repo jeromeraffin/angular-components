@@ -38,6 +38,19 @@
 
 .Admin__Sidebar a {
   color: #FFF;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.Admin__Sidebar-item {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  height: 3rem;
+  padding: 0 0 0 2rem;
 }
 
 .Admin__Content {
