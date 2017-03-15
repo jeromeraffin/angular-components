@@ -11,20 +11,22 @@ import { AdminArticlesModule } from './admin-articles/admin.articles.module';
 import { AdminModule } from './admin/admin.module';
 import { ArticleModule } from './article/article.module';
 import { DevAddArticlesModule } from './dev-add-articles/dev.add.articles.module';
+import { FiltreModule } from './filtre/filtre.module';
 
 export const ComponentsModule = angular
 .module('app.components', [
-		ButtonModule,
-		InputModule,
-		loginFormModule,
-		CardModule,
-		ArticlesModule,
-		IndexModule,
-		AdminArticlesModule,
-		AdminModule,
-		FooterModule,
-		HeaderModule,
-    ArticleModule,
-    DevAddArticlesModule
+	ButtonModule,
+	InputModule,
+	loginFormModule,
+	CardModule,
+	ArticlesModule,
+	IndexModule,
+	AdminArticlesModule,
+	AdminModule,
+	FooterModule,
+	HeaderModule,
+	ArticleModule,
+	DevAddArticlesModule,
+	FiltreModule
 	])
 .name;
