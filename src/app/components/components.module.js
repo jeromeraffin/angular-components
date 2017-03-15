@@ -6,7 +6,7 @@ import { CardModule } from './card/card.module';
 //importation du module header
 import { HeaderModule } from './header/header.module';
 import { FooterModule } from './footer/footer.module';
-import { IndexModule } from './view/index.module';
+import { IndexModule } from './index/index.module';
 import { ArticlesModule } from './articles/articles.module';
 import { BackArticlesModule } from './back-articles/back.articles.module';
 import { BackModule } from './back/back.module';
