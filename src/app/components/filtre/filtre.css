@@ -41,6 +41,7 @@
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+    align-items:center;
     list-style: none;
     padding: 0;
 
