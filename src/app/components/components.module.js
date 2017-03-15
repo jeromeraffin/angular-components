@@ -3,16 +3,28 @@ import { ButtonModule } from './button/button.module';
 import { InputModule } from './input/input.module';
 import { loginFormModule } from './login-form/login-form.module';
 import { CardModule } from './card/card.module';
-//importation du module header
 import { HeaderModule } from './header/header.module';
 import { FooterModule } from './footer/footer.module';
 import { IndexModule } from './index/index.module';
 import { ArticlesModule } from './articles/articles.module';
-import { BackArticlesModule } from './back-articles/back.articles.module';
-import { BackModule } from './back/back.module';
+import { AdminArticlesModule } from './admin-articles/admin.articles.module';
+import { AdminModule } from './admin/admin.module';
+import { ArticleModule } from './article/article.module';
+import { DevAddArticlesModule } from './dev-add-articles/dev.add.articles.module';
 
 export const ComponentsModule = angular
 .module('app.components', [
-	ButtonModule, InputModule, loginFormModule, CardModule, ArticlesModule, IndexModule, BackArticlesModule, BackModule, FooterModule, HeaderModule
+		ButtonModule,
+		InputModule,
+		loginFormModule,
+		CardModule,
+		ArticlesModule,
+		IndexModule,
+		AdminArticlesModule,
+		AdminModule,
+		FooterModule,
+		HeaderModule,
+    ArticleModule,
+    DevAddArticlesModule
 	])
 .name;

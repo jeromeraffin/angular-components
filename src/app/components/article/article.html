@@ -1,0 +1,16 @@
+<section class="Section Section__fullArticle">
+  <article class="fullArticle__content">
+    <figure class="fullArticle__img">
+      <img alt="{{ $ctrl.article.imgAlt }}" src="{{ $ctrl.article.img }}" />
+    </figure>
+    <header class="fullArticle__header">
+      <date class="fullArticle__date">{{ $ctrl.article.date }}</date>
+      <h2 class="fullArticle__title">{{ $ctrl.article.title }}</h2>
+    </header>
+    <div ng-bind-html="$ctrl.article.content" class="fullArticle__desc">
+    </div>
+  </article>
+  <footer>
+    <div class="fullArticle__bordure"></div>
+  </footer>
+</section>

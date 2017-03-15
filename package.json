@@ -4,13 +4,13 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-  	"start": "NODE_PATH=$NODE_PATH:./src node server",
+    "start": "NODE_PATH=$NODE_PATH:./src node server",
     "dev": "npm start & webpack-dev-server --progress --colors",
     "build": "webpack --progress --colors --config webpack.prod.config.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "",
   "devDependencies": {
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.2",
@@ -28,11 +28,12 @@
   "dependencies": {
     "angular": "^1.6.2",
     "angular-ui-router": "^0.4.2",
+    "body-parser": "^1.7.1",
+    "express": "^4.15.2",
     "lodash": "^4.17.4",
-		"body-parser": "^1.7.1",
-		"express": "^4.15.2",
-		"method-override": "^2.3.7",
-		"mongoose": "^4.8.6",
-		"morgan": "^1.8.1"
+    "method-override": "^2.3.7",
+    "mongoose": "^4.8.6",
+    "mongoose-slug-generator": "^1.0.4",
+    "morgan": "^1.8.1"
   }
 }

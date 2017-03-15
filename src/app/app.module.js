@@ -10,8 +10,8 @@ export const AppModule = angular
     uiRouter
   ])
   .component('app', AppComponent)
-  // .config(($locationProvider, $urlRouterProvider) => {
-  
-  //   $locationProvider.html5Mode(true);
-  // })
+  // Disable debug infos (ng-scope, etc...)
+  .config(['$compileProvider', function ($compileProvider) {
+        $compileProvider.debugInfoEnabled(false);
+    }])
   .name;

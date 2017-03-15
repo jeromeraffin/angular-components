@@ -36,12 +36,13 @@ module.exports = {
       // Loaders for other file types can go here
     ],
   },
-  plugins: [new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoEmitOnErrorsPlugin(),
-        new HtmlWebpackPlugin( {
-      template: 'public/index.html',
-      hash: true
-  })
+  plugins: [
+  	new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
+    new HtmlWebpackPlugin({
+			      template: 'public/index.html',
+			      hash: true
+			  })
   ],
   devServer: {
         hot: true,

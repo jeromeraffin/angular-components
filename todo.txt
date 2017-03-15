@@ -1,12 +1,48 @@
-- make modules
+===================
+BASE
+===================
+- 3 ng-app ?
+	- front
+	- auth
+	- admin
+- server or client side rendering ?
+
+===================
+CODE
+===================
+- make server modules
 	- route api
 	- db
-- inject $http (where ?)
-- make services
+- use ng-annotate
+- use ng-translate and i18n-node
+	- fichier json
+- use passport for auth ?
+- update slug when update article ?
+
+===================
+DB
+===================
+- categories
+- langues
+- galleries
+
+===================
+FRONT
+===================
+- display articles by date
+- pagination
 	- articles
-- this.$http = $http in constructor ?
-- ng-annotate ?
-- limit in ?
-		then((res) => {
-			return res.data;
-		}
+- categories
+- galleries
+
+===================
+ADMIN
+===================
+- login
+- setup
+  - config
+- preview article
+- pagination
+	- articles
+- categories
+- galleries
