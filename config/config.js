@@ -1,5 +1,5 @@
 
 
 module.exports = {
-	nbOfArticles: 2
+	nbOfArticles: 6
 }

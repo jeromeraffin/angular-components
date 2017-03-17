@@ -33,7 +33,7 @@ module.exports = (app) => {
 					res.send(err);
 				}
 
-				console.log(req);
+				// console.log(req);
 
 				// Return articles in JSON format
 				res.json({count: count, articles: articles});
