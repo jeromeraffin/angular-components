@@ -18,6 +18,10 @@ export const ArticlesModule = angular
 	.state('articles', {
 		url: '/articles',
 		template: '<articles-component class="Component__articles"></articles-component>'
+	})
+	.state('articles-page', {
+		url: '/articles/page/:page',
+		template: '<articles-component class="Component__articles"></articles-component>'
 	});
 	$urlRouterProvider.otherwise('/');
 	$locationProvider.html5Mode(true);

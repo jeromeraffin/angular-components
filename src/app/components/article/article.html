@@ -4,7 +4,7 @@
       <img alt="{{ $ctrl.article.imgAlt }}" src="{{ $ctrl.article.img }}" />
     </figure>
     <header class="fullArticle__header">
-      <date class="fullArticle__date">{{ $ctrl.article.date }}</date>
+      <date class="fullArticle__date">{{ $ctrl.article.updatedAt | date : format : timezone }}</date>
       <h2 class="fullArticle__title">{{ $ctrl.article.title }}</h2>
     </header>
     <div ng-bind-html="$ctrl.article.content" class="fullArticle__desc">

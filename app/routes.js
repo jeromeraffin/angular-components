@@ -5,6 +5,9 @@
 // path
 let path = require('path');
 
+// Load the config
+const config = require('../config/config.js');
+
 // Load the Article model
 let Article = require('./models/article.js');
 
@@ -12,15 +15,30 @@ let Article = require('./models/article.js');
 module.exports = (app) => {
 	// Get all articles
 	app.get('/api/articles/fetchAll', (req, res) => {
-		// Use mongoose to get all article in the database
-		Article.find((err, articles) => {
-			// If there is an error retriving, send the error. Nothing after res.send(err) will excute
+
+
+// Delete an Article and send back all remaining articles
+
+		// Count and return the articles
+		// Use mongoose to count all articles in the database
+		Article.count((err, count) => {
 			if(err) {
 				res.send(err);
 			}
-			// Return all articles in JSON format
-			res.json(articles);
-		}).limit(20);
+			// Get and return the articles
+			// Use mongoose to get articles in the database
+			Article.find((err, articles) => {
+				// If there is an error retriving, send the error. Nothing after res.send(err) will excute
+				if(err) {
+					res.send(err);
+				}
+
+				console.log(req);
+
+				// Return articles in JSON format
+				res.json({count: count, articles: articles});
+			}).limit(config.nbOfArticles);
+		});
 	});
 
 	// Create article and send back all articles after creation
@@ -44,7 +62,7 @@ module.exports = (app) => {
 					res.send(err);
 				}
 				res.json(articles);
-			});
+			}).limit(config.nbOfArticles);
 		});
 	});
 
@@ -69,7 +87,7 @@ module.exports = (app) => {
 					res.send(err);
 				}
 				res.json(articles);
-			});
+			}).limit(config.nbOfArticles);
 		});
 	});
 
@@ -110,13 +128,14 @@ module.exports = (app) => {
 			if(err) {
 				res.send(err);
 			}
-			// Get and return all the articles after the delete operation to make sure that the article got deleted
 			Article.find((err, articles) => {
+				// If there is an error retriving, send the error. Nothing after res.send(err) will excute
 				if(err) {
 					res.send(err);
 				}
+				// Return articles in JSON format
 				res.json(articles);
-			});
+			}).limit(config.nbOfArticles);
 		});
 	});
 };

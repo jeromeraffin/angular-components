@@ -1,43 +1,80 @@
 ===================
 BASE
 ===================
-- 3 ng-app ?
-	- front
-	- auth
-	- admin
+- Front app
+	- Accueil cp
+	- Médecine ancestral cp
+	- Header cp
+	- Footer cp
+	- Blog cp	
+		- Articles cp
+			- Article cp
+				- Comments cp
+		- Galleries cp
+			- Gallery cp
+		- Filter cp
+		- Search cp
+	- Rdv cp
+		- ...
+- Auth app
+	- Auth cp
+- Admin app
+	- Blog cp
+		- Articles cp
+		- Categories cp
+		- Langs cp
+		- Medias cp
+		- Users cp
+  	- Config cp
+		- Galleries cp
+		- Config cp
+		- Comments cp
+	- Rdv cp
+		- ...
+
+- pagination sans recharger la page
 - server or client side rendering ?
 
 ===================
 CODE
 ===================
+- how to load config file to make it available everywhere ?
 - make server modules
+	- ctrl
 	- route api
 	- db
 - use ng-annotate
 - use ng-translate and i18n-node
 	- fichier json
-- use passport for auth ?
+- use passport for auth
 - update slug when update article ?
-- scss
+- scss / postcss
 - bindings
 
 ===================
 DB
 ===================
+- queries in parallel
 - articles
 	- state
 - categories
-- langues
+- langs
 - galleries
+- config
+- comments
+- medias
+- users
 
 ===================
 FRONT
 ===================
-- display articles by date
+- display articles by date created
 - pagination
 	- articles
 - categories
+- search
 - galleries
+- comments
 
 ===================
 ADMIN
@@ -51,4 +88,8 @@ ADMIN
 - pagination
 	- articles
 - categories
+- langs
 - galleries
+- config
+- medias
+- comments

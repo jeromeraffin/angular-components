@@ -2,14 +2,13 @@
   {{ $ctrl.articlesTitle }}
 </h1>
 <ul class="Article__list">
-
     <li class="Article__item" ng-repeat="article in $ctrl.articles">
       <figure class="Article__img" >
         <img alt="{{ article.imgAlt }}" src="{{ article.img }}"/>
       </figure>
       <div class="Article__container">
         <date class="Article__date">
-          {{ article.date }}
+          {{ article.updatedAt | date : format : timezone }}
         </date>
         <h2 class="Article__title">
         	<a ui-sref="article({slug: article.slug})" >
@@ -21,5 +20,7 @@
         </p>
       </div>
     </li>
-
 </ul>
+<a ui-sref="articles-page({page: 2})">
+	next - {{ $ctrl.lastArticleDate }}
+</a>

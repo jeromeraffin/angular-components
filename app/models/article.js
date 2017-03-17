@@ -8,12 +8,11 @@ let mongoose = require('mongoose');
 let slug = require('mongoose-slug-generator');
 mongoose.plugin(slug);
 
-module.exports = mongoose.model('Article', {
+let ArticleSchema = new mongoose.Schema({  
 	lang: String,
 	timestamps: Boolean,
   title: String,
   content: String,
-  date: String,
   excerpt: String,
   img: String,
   categories: Array,
@@ -26,4 +25,8 @@ module.exports = mongoose.model('Article', {
     slug_padding_size: 2,
     unique: true
   }
+}, {
+   timestamps: true
 });
+
+module.exports = mongoose.model('Article', ArticleSchema);  
