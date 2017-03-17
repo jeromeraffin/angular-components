@@ -18,9 +18,30 @@ module.exports = (app) => {
 			if(err) {
 				res.send(err);
 			}
+
+			console.log('test');
 			// Return all articles in JSON format
 			res.json(articles);
 		}).limit(20);
+	});
+
+	app.get('/api/articles/search/:search', (req, res) => {
+		// Use mongoose to get all article in the database
+		Search.find( {title: { "$regex": "EEE", "$options": "i" }} , (errs, search) => {
+			if(errs){
+				res.send(errs);	
+			}
+			res.json(search);
+		}).limit(20);;
+
+		// search.find((err, articles) => {
+		// 	// If there is an error retriving, send the error. Nothing after res.send(err) will excute
+		// 	if(err) {
+		// 		res.send(err);
+		// 	}
+		// 	// Return all articles in JSON format
+		// 	res.json(articles); 
+		// }).limit(20);
 	});
 
 	// Create article and send back all articles after creation
@@ -74,6 +95,20 @@ module.exports = (app) => {
 	});
 
 	// Get one article with _id
+	app.get('/api/articles/fetchId/:article_title', (req, res) => {
+		Article.find({
+			title: req.params.article_title
+		}, (err, article) => {
+			if(err) {
+				res.send(err);
+			}
+			else {
+				res.json(article);
+			}
+		});
+	});
+
+	// Get one article with _id
 	app.get('/api/articles/fetchId/:article_id', (req, res) => {
 		Article.findOne({
 			_id: req.params.article_id
@@ -91,16 +126,16 @@ module.exports = (app) => {
   app.get('/api/articles/fetchSlug/:slug', (req, res) => {
     //console.log(req.params.slug);
     Article.findOne({
-      slug: req.params.slug
+    	slug: req.params.slug
     }, (err, article) => {
-      if(err) {
-        res.send(err);
-      }
-      else {
-        res.json(article);
-      }
+    	if(err) {
+    		res.send(err);
+    	}
+    	else {
+    		res.json(article);
+    	}
     });
-  });
+});
 
 	// Delete an Article and send back all remaining articles
 	app.delete('/api/articles/delete/:article_id', (req, res) => {

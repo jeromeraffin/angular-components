@@ -5,13 +5,13 @@ import { ComponentsModule } from './components/components.module';
 import './app.css';
 
 export const AppModule = angular
-  .module('app', [
-    ComponentsModule,
-    uiRouter
+.module('app', [
+  ComponentsModule,
+  uiRouter
   ])
-  .component('app', AppComponent)
+.component('app', AppComponent)
   // Disable debug infos (ng-scope, etc...)
   .config(['$compileProvider', function ($compileProvider) {
-        $compileProvider.debugInfoEnabled(false);
-    }])
+    $compileProvider.debugInfoEnabled(false);
+  }])
   .name;

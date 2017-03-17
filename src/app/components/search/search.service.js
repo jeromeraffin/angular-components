@@ -1,19 +1,20 @@
-// app/components/articles/articles.service.js
+// app/components/search/search.service.js
 
 'use strict'
 
-export class ArticlesService {
+export class SearchService {
 	constructor($http) {
 		this.$http = $http;
-		this.getArticles();
+		this.getSearch();
 	}
 
 	// Return all articles
-	getArticles() {	
+	getSearch() {	
 		return this.$http({
 			method: 'GET',
-			url: '/api/articles/fetchAll'
+			url: '/api/search/search'
 		}).then((res) => {
+			console.log("title est", res.data[0].title);
 			return res.data;
 		})
 		.catch((err) => {
