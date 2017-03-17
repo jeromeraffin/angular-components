@@ -53,7 +53,7 @@ li{
 	height: 55px;
 	line-height: 20px;
 	text-align: center;
-	border-left: 1px solid #989898;
+	/*border-left: 1px solid #989898;*/
 }
 
 .dropdown-content {
@@ -86,7 +86,7 @@ input[type=text] {
 	border-radius: 4px;
 	font-size: 13px;
 	background-color: white;
-	background-position: 10px 10px; 
+	background-position: 10px 10px;
 	background-repeat: no-repeat;
 	padding: 12px 20px 12px 40px;
 	-webkit-transition: width 0.4s ease-in-out;
@@ -102,4 +102,3 @@ input[type=text]:focus {
 	height: 200px;
 	border: 1px solid black;
 }
-

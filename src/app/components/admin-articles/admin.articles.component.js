@@ -12,7 +12,7 @@ export const AdminArticlesComponent = {
 			this.formData = {};
 
 			this.AdminArticlesService.getArticles().then((res) => {
-			    this.articles = res;
+			    this.articles = res.articles;
 			});
 		}
 

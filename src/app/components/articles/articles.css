@@ -57,12 +57,13 @@
 	color: #444;
 }
 
-.Article__title {
+.Article__title a {
 	text-align: center;
 	font-family: 'Playfair Display', serif;
 	font-weight: 700;
 	margin: 1.4rem 0;
 	color: #1A4603;
+  text-decoration: none;
 }
 
 .Article__excerpt {
