@@ -5,7 +5,7 @@ import { loginFormModule } from './login-form/login-form.module';
 import { CardModule } from './card/card.module';
 import { HeaderModule } from './header/header.module';
 import { FooterModule } from './footer/footer.module';
-import { IndexModule } from './view/index.module';
+import { IndexModule } from './index/index.module';
 import { ArticlesModule } from './articles/articles.module';
 import { AdminArticlesModule } from './admin-articles/admin.articles.module';
 import { AdminModule } from './admin/admin.module';
