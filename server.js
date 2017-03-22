@@ -24,7 +24,7 @@ let database = require('./config/database.js');
 // Connect to mongoDB
 mongoose.connect(database.url);
 // Set the port
-const PORT = 3000;
+const PORT = 8081;
 
 // Set the static files location
 app.use(express.static(path.join(__dirname + '/public')));
@@ -52,6 +52,37 @@ app.use(function(req, res) {
 		res.sendFile(path.join(__dirname, '/public/index.html'));
     //res.sendFile(__dirname + '/public/index.html');
 });
+
+
+
+// Requires multiparty
+let multiparty = require('connect-multiparty');
+let multipartyMiddleware = multiparty();
+
+// Requires controller
+// UserController = require('./controllers/UserController');
+
+// let UserController = function() {};
+//
+// UserController.prototype.uploadFile = function(req, res) {
+//     // We are able to access req.files.file thanks to
+//     // the multiparty middleware
+//     var file = req.files.file;
+//     console.log(file.name);
+//     console.log(file.type);
+// }
+
+// let router = express.Router();
+
+// Example endpoint
+app.post('/api/upload', multipartyMiddleware, (req, res) => {
+  //multipartyMiddleware, UserController.uploadFile
+  var file = req.files.file;
+  console.log(file.name);
+  console.log(file.type);
+});
+
+
 
 // Startup our app
 app.listen(PORT, function() {

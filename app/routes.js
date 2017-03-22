@@ -13,12 +13,16 @@ let Article = require('./models/article.js');
 
 // Expose the routes to our app with module.exports
 module.exports = (app) => {
+
+
+app.post('/api/upload', (req, res) => {
+  
+});
+
+
+
 	// Get all articles
 	app.get('/api/articles/fetchAll', (req, res) => {
-
-
-// Delete an Article and send back all remaining articles
-
 		// Count and return the articles
 		// Use mongoose to count all articles in the database
 		Article.count((err, count) => {
@@ -33,7 +37,7 @@ module.exports = (app) => {
 					res.send(err);
 				}
 
-				// console.log(req);
+				//console.log(articles.length);
 
 				// Return articles in JSON format
 				res.json({count: count, articles: articles});
@@ -48,9 +52,7 @@ module.exports = (app) => {
 			title: req.body.title,
 			content: req.body.content,
 			excerpt: req.body.excerpt,
-			date: req.body.date,
 			img: req.body.img,
-			imgAlt: req.body.imgAlt
 		}, (err, article) => {
 			if(err) {
 				res.send(err);
@@ -74,9 +76,7 @@ module.exports = (app) => {
 			title: req.body.title,
 			content: req.body.content,
 			excerpt: req.body.excerpt,
-			date: req.body.date,
 			img: req.body.img,
-			imgAlt: req.body.imgAlt
 		}, (err, article) => {
 			if(err) {
 				res.send(err);

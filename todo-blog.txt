@@ -40,7 +40,6 @@ BASE
 CODE
 ===================
 - how to load config file to make it available everywhere ?
-- use ng-annotate ?
 - use ng-translate and i18n-node ?
 	- fichier json
 - use passport for auth
@@ -54,8 +53,6 @@ CODE
 DB
 ===================
 - queries in parallel
-- articles
-  - app (blog, médecine ancestral, ...)
 - categories
 - langs
 - galleries
@@ -67,6 +64,7 @@ DB
 ===================
 FRONT
 ===================
+- langs
 - display articles by date created
 - pagination
 	- articles
