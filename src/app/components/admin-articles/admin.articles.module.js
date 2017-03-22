@@ -37,33 +37,7 @@ export const AdminArticlesModule = angular
 		})
 
 
-    .config(function ($provide) {
 
-                $provide.decorator('taOptions', ['taRegisterTool', '$delegate', '$modal', function (taRegisterTool, taOptions, $modal) {
-                    taRegisterTool('uploadImage', {
-                        buttontext: 'Upload Image',
-                        iconclass: "fa fa-image",
-                        action: function (deferred,restoreSelection) {
-                            $modal.open({
-                                controller: 'UploadImageModalInstance',
-                                templateUrl: 'views/modals/upload.html'
-                            }).result.then(
-                                function (result) {
-                                    restoreSelection();
-                                    document.execCommand('insertImage', true, result);
-                                    deferred.resolve();
-                                },
-                                function () {
-                                    deferred.resolve();
-                                }
-                            );
-                            return false;
-                        }
-                    });
-                    taOptions.toolbar[1].push('uploadImage');
-                    return taOptions;
-                }]);
-            })
 
             .controller('UploadImageModalInstance', function($scope, $uibModalInstance, Upload){
 
@@ -90,6 +64,38 @@ export const AdminArticlesModule = angular
                         $uibModalInstance.close($scope.image);
                     };
                 })
+
+
+
+                .config(function ($provide) {
+
+                            $provide.decorator('taOptions', ['taRegisterTool', '$delegate', '$uibModal', function (taRegisterTool, taOptions, $modal) {
+                                taRegisterTool('uploadImage', {
+                                    buttontext: 'Upload Image',
+                                    iconclass: "fa fa-image",
+                                    action: function (deferred,restoreSelection) {
+                                        $uibModal.open({
+                                            controller: 'UploadImageModalInstance',
+                                            templateUrl: 'views/modals/upload.html'
+                                        }).result.then(
+                                            function (result) {
+                                                restoreSelection();
+                                                document.execCommand('insertImage', true, result);
+                                                deferred.resolve();
+                                            },
+                                            function () {
+                                                deferred.resolve();
+                                            }
+                                        );
+                                        return false;
+                                    }
+                                });
+                                taOptions.toolbar[1].push('uploadImage');
+                                return taOptions;
+                            }]);
+                        })
+
+
                 // this demonstrates changing the classes of the icons for the tools for font-awesome v3.x
                 /*
 								$provide.decorator('taTools', ['$delegate', function(taTools){
