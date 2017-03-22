@@ -6,6 +6,8 @@ import { AdminArticlesComponent } from './admin.articles.component';
 import { AdminArticlesService } from './admin.articles.service';
 import './admin.articles.css';
 
+import uib from 'angular-ui-bootstrap';
+import ngFileUpload from 'ng-file-upload';
 
 import 'textangular/dist/textAngular.css';
 //import textAngularSanitize from 'textangular/dist/textAngular-sanitize';
@@ -18,7 +20,9 @@ import textAngular from 'textangular/dist/textAngular.min';
 export const AdminArticlesModule = angular
 	.module('adminArticlesComponent', [
 			uiRouter,
-			textAngular
+			textAngular,
+      ngFileUpload,
+      uib
 		])
 	.service('AdminArticlesService', AdminArticlesService)
 	.component('adminArticlesComponent', AdminArticlesComponent)
@@ -33,26 +37,59 @@ export const AdminArticlesModule = angular
 		})
 
 
-.config(($provide) => {
-                // this demonstrates how to register a new tool and add it to the default toolbar
-                $provide.decorator('taOptions', ['taRegisterTool', '$delegate', function(taRegisterTool, taOptions) { // $delegate is the taOptions we are decorating
-                    taRegisterTool('test', {
-                        buttontext: 'Test',
-                        action: function() {
-                            alert('Test Pressed')
+    .config(function ($provide) {
+
+                $provide.decorator('taOptions', ['taRegisterTool', '$delegate', '$modal', function (taRegisterTool, taOptions, $modal) {
+                    taRegisterTool('uploadImage', {
+                        buttontext: 'Upload Image',
+                        iconclass: "fa fa-image",
+                        action: function (deferred,restoreSelection) {
+                            $modal.open({
+                                controller: 'UploadImageModalInstance',
+                                templateUrl: 'views/modals/upload.html'
+                            }).result.then(
+                                function (result) {
+                                    restoreSelection();
+                                    document.execCommand('insertImage', true, result);
+                                    deferred.resolve();
+                                },
+                                function () {
+                                    deferred.resolve();
+                                }
+                            );
+                            return false;
                         }
                     });
-                    taOptions.toolbar[1].push('test');
-                    taRegisterTool('colourRed', {
-                        iconclass: "fa fa-square red",
-                        action: function() {
-                            this.$editor().wrapSelection('forecolor', 'red');
-                        }
-                    });
-                    // add the button to the default toolbar definition
-                    taOptions.toolbar[1].push('colourRed');
+                    taOptions.toolbar[1].push('uploadImage');
                     return taOptions;
                 }]);
+            })
+
+            .controller('UploadImageModalInstance', function($scope, $uibModalInstance, Upload){
+
+                    $scope.image = 'img/default.png';
+
+                    $scope.progress = 0;
+                    $scope.files = [];
+
+                    $scope.upload = function(){
+                        Upload.upload({
+                            url: 'api/upload',
+                            fields: {'dir': 'img/uploads/'},
+                            file: $scope.files[0],
+                            method: 'POST'
+                        }).progress(function (evt) {
+                            $scope.progress = parseInt(100.0 * evt.loaded / evt.total);
+                        }).success(function (data) {
+                            $scope.progress = 0;
+                            $scope.image = data.dir+data.filename;
+                        });
+                    };
+
+                    $scope.insert = function(){
+                        $uibModalInstance.close($scope.image);
+                    };
+                })
                 // this demonstrates changing the classes of the icons for the tools for font-awesome v3.x
                 /*
 								$provide.decorator('taTools', ['$delegate', function(taTools){
@@ -76,12 +113,12 @@ export const AdminArticlesModule = angular
 											return taTools;
 										}]);
 								*/
-            })
-            
 
 
 
 
 
-	
+
+
+
 	.name;
