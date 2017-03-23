@@ -24,7 +24,7 @@ let database = require('./config/database.js');
 // Connect to mongoDB
 mongoose.connect(database.url);
 // Set the port
-const PORT = 8081;
+const PORT = 8080;
 
 // Set the static files location
 app.use(express.static(path.join(__dirname + '/public')));
