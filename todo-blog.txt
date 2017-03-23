@@ -81,7 +81,6 @@ ADMIN
   - config
 - articles
 	- textAngular
-    - upload images
     - browse images
   - preview article
   - pagination
