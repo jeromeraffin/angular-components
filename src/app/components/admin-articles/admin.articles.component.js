@@ -5,8 +5,10 @@ import template from './admin.articles.html';
 export const AdminArticlesComponent = {
 	template,
 	controller: class AdminArticlesComponent {
-		constructor(AdminArticlesService) {
+		constructor(AdminArticlesService, Upload) {
       this.AdminArticlesService = AdminArticlesService;
+
+      this.Upload = Upload;
 
 			this.articleId = '';
 			this.formData = {};
@@ -43,5 +45,41 @@ export const AdminArticlesComponent = {
 					this.articles = res;
 			});
 		}
-	}
+
+    upload(){
+      this.image = 'imgages/default.png';
+
+      console.log('ets');
+
+      this.progress = 0;
+      this.files = [];
+
+      this.test = () => {
+        console.log('test');
+      }
+
+      this.upload = () => {
+        console.log('test');
+          this.Upload.upload({
+              url: '/api/upload',
+              fields: {'dir': 'imgages/uploads/'},
+              file: this.files[0],
+              method: 'POST'
+          }).progress( (e) =>  {
+              this.progress = parseInt(100.0 * e.loaded / e.total);
+          }).success( (data) => {
+              this.progress = 0;
+              this.image = data.dir+data.filename;
+          });
+      };
+
+      this.insert = () => {
+          $uibModalInstance.close(this.image);
+      };
+  }
+
+
+
+
+  }
 };

@@ -1,5 +1,20 @@
 'use strict'
 
+/*
+textAngular
+rangy
+bootstrap
+ui bootstrap
+ng file upload
+
+controller
+config
+template
+
+api
+
+*/
+
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import {
@@ -15,6 +30,7 @@ import template from './upload.html';
 import uib from 'angular-ui-bootstrap';
 import ngFileUpload from 'ng-file-upload';
 
+
 import 'textangular/dist/textAngular.css';
 //import textAngularSanitize from 'textangular/dist/textAngular-sanitize';
 import 'rangy';
@@ -22,6 +38,7 @@ import 'rangy/lib/rangy-selectionsaverestore'
 // require('textangular/dist/textAngular-rangy.min');
 import 'textangular/dist/textAngular-sanitize';
 import textAngular from 'textangular/dist/textAngular.min';
+
 
 export const AdminArticlesModule = angular
   .module('adminArticlesComponent', [
