@@ -11,8 +11,32 @@ const config = require('../config/config.js');
 // Load the Article model
 let Article = require('./models/article.js');
 
+// var multiparty = require('connect-multiparty');
+// var multipartyMiddleware = multiparty();
+
 // Expose the routes to our app with module.exports
 module.exports = (app) => {
+
+
+
+  // // Example endpoint
+  // app.post('/api/upload', multipartyMiddleware, (req, res) => {
+  //
+  //       // We are able to access req.files.file thanks to
+  //       // the multiparty middleware
+  //       var file = req.files.file;
+  //       console.log(file.name);
+  //       console.log(file.type);
+  //
+  //
+  // });
+
+
+
+
+
+
+
 	// Get all articles
 	app.get('/api/articles/fetchAll', (req, res) => {
 

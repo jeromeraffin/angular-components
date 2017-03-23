@@ -42,6 +42,74 @@ app.use(bodyParser.json({'type':'application/vnd.api+json'}));
 
 app.use(methodOverride());
 
+//######################################################
+// file upload
+//######################################################
+// Requires multiparty
+// let multiparty = require('connect-multiparty');
+// let multipartyMiddleware = multiparty();
+
+// // Requires controller
+// let UserController = function() {};
+//
+// UserController.prototype.uploadFile = function(req, res) {
+//     // We are able to access req.files.file thanks to
+//     // the multiparty middleware
+//     var file = req.files.file;
+//     console.log(file.name);
+//     console.log(file.type);
+// }
+
+// var multipart = require('connect-multiparty');
+// var multipartMiddleware = multipart();
+
+app.use(function(req, res, next) { //allow cross origin requests
+        res.setHeader("Access-Control-Allow-Methods", "POST, PUT, OPTIONS, DELETE, GET");
+        res.header("Access-Control-Allow-Origin", "http://localhost");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        next();
+});
+
+var multer  = require('multer');
+
+var storage = multer.diskStorage({
+  destination: function (req, file, callback) {
+    callback(null, './public/images/uploads');
+  },
+  filename: function (req, file, callback) {
+    console.log(file);
+    callback(null, file.originalname)
+  }
+});
+
+var upload = multer({storage: storage}).single('file');
+
+app.post('/api/upload', (req, res) => {
+  upload(req, res, function(err) {
+  if(err) {
+    console.log('Error Occured');
+    return;
+  }
+  console.log(req.file);
+  res.json({path: '/images/uploads/' + req.file.filename, message: 'Your File Uploaded'});
+  console.log('Photo Uploaded');
+  })
+}
+);
+  // don't forget to delete all req.files when done
+
+
+// // Example endpoint
+// app.post('/api/upload', multipartyMiddleware, (req, res) => {
+//   var file = req.files.file;
+//   console.log(file.name);
+//   console.log(file.type);
+// });
+
+//######################################################
+
+
+
 // Routes =============================
 // Configure our routes
 require('./app/routes.js')(app);
