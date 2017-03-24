@@ -1,3 +1,8 @@
+es6
+  async
+  await
+  try catch
+
 ===================
 BASE
 ===================
@@ -33,21 +38,24 @@ BASE
   	- Rdv cp
   		- ...
 
-- pagination sans recharger la page
-- server or client side rendering ?
-
 ===================
 CODE
 ===================
-- how to load config file to make it available everywhere ?
 - use ng-translate and i18n-node ?
+  - langue en fonction du navigateur
 	- fichier json
+- pagination sans recharger la page
+- server or client side rendering ?
+- how to load config file to make it available everywhere ?
+  - app.config() ?
 - use passport for auth
 - slug
   - update slug when update article ?
   - make it manually editable ?
 - scss / postcss
 - bindings
+- textangular
+  virer bootstrap ui-bootstrap
 
 ===================
 DB
@@ -71,25 +79,30 @@ FRONT
 - categories
 - search
 - galleries
+-----------------------
+## optionnal ##
+-----------------------
 - comments
 
 ===================
 ADMIN
 ===================
-- login
-- setup
-  - config
-- articles
+- check for double when upload image
+- posts
 	- textAngular
     - browse images
   - preview article
   - pagination
   - update date (created and updated)
+  - galleries
 - categories
 - langs
-- galleries
-  - upload images
-  - browse images
+- login
+-----------------------
+## optionnal ##
+-----------------------
+- setup
+  - config
 - config
 - medias
 - comments

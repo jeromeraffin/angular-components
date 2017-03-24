@@ -13,6 +13,13 @@ export const AdminArticlesComponent = {
 			this.articleId = '';
 			this.formData = {};
 
+      this.toolbar = [
+                ['h1', 'h2', 'h3', 'bold', 'italics', 'ul', 'ol', 'insertImage', 'insertLink', 'insertVideo',
+                'indent', 'outdent', 'undo', 'redo'],
+                ['underline', 'strikeThrough', 'justifyLeft', 'justifyCenter',
+                'justifyRight', 'justifyFull', 'clear', 'uploadImage']
+            ];
+
 			this.AdminArticlesService.getArticles().then((res) => {
 			    this.articles = res.articles;
 			});
